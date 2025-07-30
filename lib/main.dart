@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe/core/utils/themes.dart';
+import 'package:recipe/features/authentication/pages/login_page.dart';
 import 'package:recipe/features/recipes/pages/categories_page.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class RecipeApp extends StatelessWidget {
         theme: AppThemes.lightTheme,
         darkTheme: AppThemes.darkTheme,
         themeMode: ThemeMode.dark,
-        home: CategoriesPage(),
+        home: LoginPage(),
       ),
     );
   }

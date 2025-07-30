@@ -9,4 +9,10 @@ class AppStyles {
     fontSize: 20.r,
     fontWeight: FontWeight.w600,
   );
+
+  static final hintStyle = TextStyle(
+    color: AppColors.beige.withValues(alpha: 0.45),
+    fontWeight: FontWeight.w500,
+    fontSize: 16.r,
+  );
 }
