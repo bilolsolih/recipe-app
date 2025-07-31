@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:recipe/features/recipes/pages/categories_page.dart';
+import 'package:recipe/core/client.dart';
 
 import 'bottom_item.dart';
+
+Future<List> fetchCategories() async {
+  var response = await dio.get('/categories/list');
+  if (response.statusCode != 200) {
+    throw Exception('Kategoriyalarni olib kelishda xatolik.');
+  }
+  return response.data;
+}
 
 class RecipeAppBarBottom extends StatelessWidget implements PreferredSizeWidget {
   const RecipeAppBarBottom({

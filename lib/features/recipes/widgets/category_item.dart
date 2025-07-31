@@ -22,8 +22,16 @@ class CategoryItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => CategoryDetailPage(categoryId: id, title: title),
+          PageRouteBuilder(
+            transitionDuration: Duration(milliseconds: 500),
+            pageBuilder: (context, animation, secondaryAnimation) => CategoryDetailPage(categoryId: id, title: title),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              final offsetTween = Tween<Offset>(begin: Offset(0, 1), end: Offset.zero).chain(CurveTween(curve: Curves.easeInOut));
+              return SlideTransition(
+                position: animation.drive(offsetTween),
+                child: child,
+              );
+            },
           ),
         );
       },

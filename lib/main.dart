@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:recipe/core/utils/themes.dart';
-import 'package:recipe/features/authentication/pages/login_page.dart';
 import 'package:recipe/features/recipes/pages/categories_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(RecipeApp());
 }
 
@@ -22,7 +21,7 @@ class RecipeApp extends StatelessWidget {
         theme: AppThemes.lightTheme,
         darkTheme: AppThemes.darkTheme,
         themeMode: ThemeMode.dark,
-        home: LoginPage(),
+        home: CategoriesPage(),
       ),
     );
   }
